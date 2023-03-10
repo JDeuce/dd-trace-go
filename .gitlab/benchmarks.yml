@@ -16,7 +16,6 @@ benchmark:
     - export ARTIFACTS_DIR="$(pwd)/reports" && (mkdir "${ARTIFACTS_DIR}" || :)
     - ./.gitlab/scripts/capture-hardware-software-info.sh
     - ./.gitlab/scripts/run-benchmarks.sh
-    - ./.gitlab/scripts/analyze-results.sh
   artifacts:
     name: "reports"
     paths:
