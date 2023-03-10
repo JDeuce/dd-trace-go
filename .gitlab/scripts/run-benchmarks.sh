@@ -13,21 +13,15 @@ git clone --branch "$CANDIDATE_BRANCH" https://github.com/DataDog/dd-trace-go "$
 
 # Run benchmarks for candidate release
 cd "$CANDIDATE_SRC/ddtrace/tracer/"
-go test -run=XXX -bench "BenchmarkConcurrentTracing|BenchmarkStartSpan" -benchmem -count 10 -benchtime 2s ./... | tee "${ARTIFACTS_DIR}/pr_bench.txt"
 
-BASELINE_SRC="/app/baseline/"
-BASELINE_BRANCH=$(github-find-merge-into-branch --for-repo="$CI_PROJECT_NAME" --for-pr="$CANDIDATE_BRANCH" || :)
+for i in {1..10}; do
+  taskset --cpu-list 25 \
+    go test -run=XXX -bench "BenchmarkConcurrentTracing" -benchmem -count 10 -benchtime 2s ./... | tee "${ARTIFACTS_DIR}/pr_same-cpu_bench.txt"
+done
 
-if [ ! -z "$BASELINE_BRANCH" ]; then
-  cd "$CANDIDATE_SRC"
-  BASELINE_COMMIT_SHA=$(git merge-base "origin/$BASELINE_BRANCH" "origin/$CANDIDATE_BRANCH")
+for i in {1..20}; do
+  dedicated_cpu=$((i+24))
 
-  # Clone baseline release
-  git clone --branch "$BASELINE_BRANCH" https://github.com/DataDog/dd-trace-go/ "$BASELINE_SRC" && \
-    cd "$BASELINE_SRC" && \
-    git checkout $BASELINE_COMMIT_SHA
-
-  # Run benchmarks for baseline release
-  cd "$BASELINE_SRC/ddtrace/tracer/"
-  go test -run=XXX -bench "BenchmarkConcurrentTracing|BenchmarkStartSpan" -benchmem -count 10 -benchtime 2s ./... | tee "${ARTIFACTS_DIR}/main_bench.txt"
-fi
+  taskset --cpu-list $dedicated_cpu \
+    go test -run=XXX -bench "BenchmarkConcurrentTracing" -benchmem -count 10 -benchtime 2s ./... | tee "${ARTIFACTS_DIR}/pr_other-cpu-${dedicated_cpu}_bench.txt"
+done

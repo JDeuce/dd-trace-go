@@ -19,26 +19,3 @@ benchmark_analyzer convert \
     }" \
   --outpath="${ARTIFACTS_DIR}/pr.converted.json" \
   "${ARTIFACTS_DIR}/pr_bench.txt"
-
-BASELINE_SRC="/app/baseline/"
-if [ -d $BASELINE_SRC ]; then
-  BASELINE_BRANCH=$(github-find-merge-into-branch --for-repo="$CI_PROJECT_NAME" --for-pr="$CANDIDATE_BRANCH" || :)
-
-  cd "$BASELINE_SRC"
-  BASELINE_COMMIT_SHA=$(git rev-parse --short HEAD)
-
-  benchmark_analyzer convert \
-    --framework=GoBench \
-    --extra-params="{\
-      \"config\":\"baseline\", \
-      \"git_commit_sha\":\"$BASELINE_COMMIT_SHA\", \
-      \"git_branch\":\"$BASELINE_BRANCH\"\
-      }" \
-    --outpath="${ARTIFACTS_DIR}/main.converted.json" \
-    "${ARTIFACTS_DIR}/main_bench.txt"
-
-  benchmark_analyzer compare pairwise --baseline='{"config":"baseline"}' --candidate='{"config":"candidate"}' --outpath "${ARTIFACTS_DIR}/report.md" --format md-nodejs "${ARTIFACTS_DIR}/main.converted.json" "${ARTIFACTS_DIR}/pr.converted.json"
-  benchmark_analyzer compare pairwise --baseline='{"config":"baseline"}' --candidate='{"config":"candidate"}' --outpath "${ARTIFACTS_DIR}/report_full.html" --format html "${ARTIFACTS_DIR}/main.converted.json" "${ARTIFACTS_DIR}/pr.converted.json"
-else
-  benchmark_analyzer analyze --outpath "${ARTIFACTS_DIR}/analysis.html" --format html "${ARTIFACTS_DIR}/pr.converted.json"
-fi
