@@ -16,12 +16,12 @@ cd "$CANDIDATE_SRC/ddtrace/tracer/"
 
 for i in {1..10}; do
   taskset --cpu-list 25 \
-    go test -run=XXX -bench "BenchmarkConcurrentTracing" -benchmem -count 10 -benchtime 2s ./... | tee "${ARTIFACTS_DIR}/pr_same-cpu_bench.txt"
+    go test -run=XXX -bench "BenchmarkConcurrentTracing" -benchmem -count 20 -benchtime 2s ./... | tee "${ARTIFACTS_DIR}/pr_same-cpu_bench.txt"
 done
 
 for i in {1..20}; do
   dedicated_cpu=$((i+24))
 
   taskset --cpu-list $dedicated_cpu \
-    go test -run=XXX -bench "BenchmarkConcurrentTracing" -benchmem -count 10 -benchtime 2s ./... | tee "${ARTIFACTS_DIR}/pr_other-cpu-${dedicated_cpu}_bench.txt"
+    go test -run=XXX -bench "BenchmarkConcurrentTracing" -benchmem -count 20 -benchtime 2s ./... | tee "${ARTIFACTS_DIR}/pr_other-cpu-${dedicated_cpu}_bench.txt"
 done
