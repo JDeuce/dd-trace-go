@@ -17,3 +17,6 @@ cd "${ARTIFACTS_DIR}"
 (which hwinfo && hwinfo > hwinfo-full.txt) || :
 #cpupower frequency-info > cpupower-frequency-info.txt
 #turbostat -n 1 > turbostat.txt
+
+echo "Let's print Go version"
+go version
