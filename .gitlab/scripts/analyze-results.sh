@@ -47,7 +47,8 @@ if [ -d $BASELINE_SRC ]; then
     --format md-nodejs \
     "${ARTIFACTS_DIR}/main.converted.json" \
     "${ARTIFACTS_DIR}/pr.converted.json"; then
-      "$INITIAL_DIR/.gitlab/scripts/run-benchmarks-with-profiler.sh"
+      # "$INITIAL_DIR/.gitlab/scripts/run-benchmarks-with-profiler.sh"
+      echo "Skipping profiler runs"
   fi
 else
   benchmark_analyzer analyze --outpath "${ARTIFACTS_DIR}/analysis.html" --format html "${ARTIFACTS_DIR}/pr.converted.json"
