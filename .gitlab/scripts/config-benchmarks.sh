@@ -9,3 +9,6 @@ export UNCONFIDENCE_THRESHOLD=2.0
 export FAIL_ON_REGRESSION_THRESHOLD=$UNCONFIDENCE_THRESHOLD
 
 export BENCHMARK_TARGETS="BenchmarkConcurrentTracing|BenchmarkStartSpan|BenchmarkSingleSpanRetention|BenchmarkInjectW3C"
+
+export BASELINE_BRANCH=main
+export BASELINE_COMMIT_SHA=92653b1daa1674c63d270321501027b658d77e8c
