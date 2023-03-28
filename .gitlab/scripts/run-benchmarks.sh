@@ -8,8 +8,6 @@ CANDIDATE_BRANCH=$CI_COMMIT_REF_NAME
 CANDIDATE_COMMIT_SHA=$CI_COMMIT_SHA
 
 if [ ! -z "$BASELINE_BRANCH" ]; then
-  cd "$CANDIDATE_SRC"
-
   # Clone baseline release
   git clone --branch "$BASELINE_BRANCH" https://github.com/DataDog/dd-trace-go/ "$BASELINE_SRC" && \
     cd "$BASELINE_SRC" && \
