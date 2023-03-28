@@ -19,10 +19,7 @@ benchmark_analyzer convert \
   "${ARTIFACTS_DIR}/pr_bench.txt"
 
 if [ -d $BASELINE_SRC ]; then
-  BASELINE_BRANCH=$(github-find-merge-into-branch --for-repo="$CI_PROJECT_NAME" --for-pr="$CANDIDATE_BRANCH" || :)
-
   cd "$BASELINE_SRC"
-  BASELINE_COMMIT_SHA=$(git rev-parse --short HEAD)
 
   benchmark_analyzer convert \
     --framework=GoBench \
