@@ -17,7 +17,7 @@ benchmark:
     - ./.gitlab/scripts/capture-hardware-software-info.sh
     - ./.gitlab/scripts/run-benchmarks.sh
     - ./.gitlab/scripts/analyze-results.sh
-    - "./.gitlab/scripts/upload-results-to-/s3.sh || :"
+    - "./.gitlab/scripts/upload-results-to-s3.sh || :"
     - "./.gitlab/scripts/post-pr-comment.sh || :"
   artifacts:
     name: "reports"
