@@ -48,13 +48,15 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/DataDog/datadog-agent/pkg/obfuscate v0.43.0 h1:wWHh/c+AboewQcXQnCdyb3gOnQlO8aaGgvrMgGz0IPo=
 github.com/DataDog/datadog-agent/pkg/obfuscate v0.43.0/go.mod h1:o+rJy3B2o+Zb+wCgLSkMlkD7EiUEA5Q63cid53fZkQY=
-github.com/DataDog/datadog-agent/pkg/remoteconfig/state v0.44.0-rc.4.0.20230328124545-8df2c0eb545f h1:W8fQon+9UwayXNhitzN5mDyQ/aZLcwp3WRGynpOkeko=
-github.com/DataDog/datadog-agent/pkg/remoteconfig/state v0.44.0-rc.4.0.20230328124545-8df2c0eb545f/go.mod h1:VVMDDibJxYEkwcLdZBT2g8EHKpbMT4JdOhRbQ9GdjbM=
+github.com/DataDog/datadog-agent/pkg/remoteconfig/state v0.43.1 h1:1yg8/bJTJwwqwmQ+z9ctlqRJ09e7WjectGdtWlZvFYw=
+github.com/DataDog/datadog-agent/pkg/remoteconfig/state v0.43.1/go.mod h1:VVMDDibJxYEkwcLdZBT2g8EHKpbMT4JdOhRbQ9GdjbM=
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
 github.com/DataDog/datadog-go/v5 v5.1.1 h1:JLZ6s2K1pG2h9GkvEvMdEGqMDyVLEAccdX5TltWcLMU=
 github.com/DataDog/datadog-go/v5 v5.1.1/go.mod h1:KhiYb2Badlv9/rofz+OznKoEF5XKTonWyhx5K83AP8E=
 github.com/DataDog/go-libddwaf v0.0.0-20230303104633-7281454880aa h1:1v6odgPM2vo6SYICJeriHamjb8D0JpzQJ6fcbn+Ppt0=
 github.com/DataDog/go-libddwaf v0.0.0-20230303104633-7281454880aa/go.mod h1:DI5y8obPajk+Tvy2o+nZc2g/5Ria/Rfq5/624k7pHpE=
+github.com/DataDog/go-libddwaf v1.0.1-0.20230330154852-6f88cc26f53d h1:U2OwLyH7blY9V+ugT94zTvq5RSrsVcB3PI0+gurvkVk=
+github.com/DataDog/go-libddwaf v1.0.1-0.20230330154852-6f88cc26f53d/go.mod h1:4jEXd/cU74wjRNBYsJICjKXA6pX+yipEbvRC5vBJpIE=
 github.com/DataDog/go-tuf v0.3.0--fix-localmeta-fork h1:yBq5PrAtrM4yVeSzQ+bn050+Ysp++RKF1QmtkL4VqvU=
 github.com/DataDog/go-tuf v0.3.0--fix-localmeta-fork/go.mod h1:yA5JwkZsHTLuqq3zaRgUQf35DfDkpOZqgtBqHKpwrBs=
 github.com/DataDog/gostackparse v0.5.0 h1:jb72P6GFHPHz2W0onsN51cS3FkaMDcjb0QzgxxA4gDk=
@@ -170,6 +172,8 @@ github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21 h1:YEetp8
 github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21/go.mod h1:+020luEh2TKB4/GOp8oxxtq0Daoen/Cii55CzbTV6DU=
 github.com/eapache/queue v1.1.0 h1:YOEu7KNc61ntiQlcEeUIoDTJ2o8mQznoNvUhiigpIqc=
 github.com/eapache/queue v1.1.0/go.mod h1:6eCeP0CKFpHLu8blIFXhExK/dRa7WDZfr6jVFPTqq+I=
+github.com/ebitengine/purego v0.4.0-alpha.1.0.20230330151547-bfe9e39de4ce h1:nI4ZpWv+QbzsDbxXnGAYbkSkW4SlSazseDSY24Jq6Rc=
+github.com/ebitengine/purego v0.4.0-alpha.1.0.20230330151547-bfe9e39de4ce/go.mod h1:iIjxzd6CiRiOG0UyXP+V1+jWqUXVjPKLAI0mRfJZTmQ=
 github.com/elastic/elastic-transport-go/v8 v8.1.0 h1:NeqEz1ty4RQz+TVbUrpSU7pZ48XkzGWQj02k5koahIE=
 github.com/elastic/elastic-transport-go/v8 v8.1.0/go.mod h1:87Tcz8IVNe6rVSLdBux1o/PEItLtyabHU3naC7IoqKI=
 github.com/elastic/go-elasticsearch/v6 v6.8.5 h1:U2HtkBseC1FNBmDr0TR2tKltL6FxoY+niDAlj5M8TK8=

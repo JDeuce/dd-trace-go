@@ -6,7 +6,7 @@ require (
 	cloud.google.com/go/pubsub v1.4.0
 	github.com/99designs/gqlgen v0.16.0
 	github.com/DataDog/datadog-agent/pkg/obfuscate v0.43.0
-	github.com/DataDog/datadog-agent/pkg/remoteconfig/state v0.44.0-rc.4.0.20230328124545-8df2c0eb545f
+	github.com/DataDog/datadog-agent/pkg/remoteconfig/state v0.43.1
 	github.com/DataDog/datadog-go/v5 v5.1.1
 	github.com/DataDog/gostackparse v0.5.0
 	github.com/DataDog/sketches-go v1.2.1
@@ -217,7 +217,7 @@ require (
 )
 
 require (
-	github.com/DataDog/go-libddwaf v0.0.0-20230303104633-7281454880aa
+	github.com/DataDog/go-libddwaf v1.0.1-0.20230330154852-6f88cc26f53d
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.40.0
 	go.opentelemetry.io/otel v1.14.0
 	go.opentelemetry.io/otel/trace v1.14.0
@@ -225,6 +225,7 @@ require (
 
 require (
 	github.com/DataDog/go-tuf v0.3.0--fix-localmeta-fork // indirect
+	github.com/ebitengine/purego v0.4.0-alpha.1.0.20230330151547-bfe9e39de4ce // indirect
 	github.com/felixge/httpsnoop v1.0.3 // indirect
 	github.com/go-logr/logr v1.2.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
