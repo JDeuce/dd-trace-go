@@ -29,6 +29,6 @@ jobs:
       - name: go get -u
         run: go get -u $PACKAGES
       - name: Compile dd-trace-go
-        run: go build -tags appsec $PACKAGES
+        run: go build $PACKAGES
       - name: Test dd-trace-go
-        run: go test -tags appsec $PACKAGES
+        run: go test $PACKAGES
