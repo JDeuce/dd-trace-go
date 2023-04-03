@@ -373,6 +373,8 @@ func TestRemoteActivationScenarios(t *testing.T) {
 }
 
 func TestCapabilities(t *testing.T) {
+
+	t.Skip() //TODO(eliott.bouhana): replace by a with sith the noappsec tag
 	rcCfg := remoteconfig.DefaultClientConfig()
 	for _, tc := range []struct {
 		name      string

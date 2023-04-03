@@ -6,8 +6,9 @@
 package appsec
 
 import (
-	waf "github.com/DataDog/go-libddwaf"
 	"sync"
+
+	waf "github.com/DataDog/go-libddwaf"
 
 	"gopkg.in/DataDog/dd-trace-go.v1/internal/appsec/dyngo"
 	"gopkg.in/DataDog/dd-trace-go.v1/internal/log"

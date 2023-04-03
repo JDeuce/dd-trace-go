@@ -22,6 +22,7 @@ func genApplyStatus(ack bool, err error) rc.ApplyStatus {
 	status := rc.ApplyStatus{
 		State: rc.ApplyStateUnacknowledged,
 	}
+
 	if err != nil {
 		status.State = rc.ApplyStateError
 		status.Error = err.Error()
