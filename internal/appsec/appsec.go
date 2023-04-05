@@ -3,6 +3,8 @@
 // This product includes software developed at Datadog (https://www.datadoghq.com/).
 // Copyright 2016 Datadog, Inc.
 
+//go:build !noappsec
+
 package appsec
 
 import (
@@ -112,7 +114,7 @@ func newAppSec(cfg *Config) *appsec {
 	return &appsec{
 		cfg:     cfg,
 		rc:      client,
-		ruleset: NewRuleset(),
+		ruleset: newRuleset(),
 	}
 }
 

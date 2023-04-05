@@ -3,6 +3,8 @@
 // This product includes software developed at Datadog (https://www.datadoghq.com/).
 // Copyright 2023 Datadog, Inc.
 
+//go:build !noappsec
+
 package appsec
 
 import (
@@ -134,7 +136,7 @@ func (r_ *rulesetFragment) validate() bool {
 }
 
 // NewRuleset initializes and returns a new ruleset using the default security rules
-func NewRuleset() *ruleset {
+func newRuleset() *ruleset {
 	var f rulesetFragment
 	f.Default()
 	return &ruleset{
