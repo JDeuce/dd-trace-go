@@ -110,8 +110,8 @@ func (r_ *rulesetFragment) Default() {
 }
 
 // validate checks that a rule override entry complies with the rule override RFC
-func (o *rulesOverrideEntry) validate() bool {
-	return len(o.ID) > 0 || o.RulesTarget != nil
+func (e *rulesOverrideEntry) validate() bool {
+	return len(e.ID) > 0 || e.RulesTarget != nil
 }
 
 // validate checks that an exclusion entry complies with the exclusion filter RFC
