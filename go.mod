@@ -216,7 +216,7 @@ require (
 	sigs.k8s.io/yaml v1.1.0 // indirect
 )
 
-require github.com/DataDog/go-libddwaf v1.0.0
+require github.com/DataDog/go-libddwaf v1.0.1-0.20230309125829-c227ee7980bf
 
 require (
 	github.com/DataDog/go-tuf v0.3.0--fix-localmeta-fork // indirect
