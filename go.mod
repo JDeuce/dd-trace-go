@@ -217,7 +217,7 @@ require (
 )
 
 require (
-	github.com/DataDog/go-libddwaf v1.0.1-0.20230330154852-6f88cc26f53d
+	github.com/DataDog/go-libddwaf v1.0.1-0.20230412142037-2b2387caca2b
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.40.0
 	go.opentelemetry.io/otel v1.14.0
 	go.opentelemetry.io/otel/trace v1.14.0
