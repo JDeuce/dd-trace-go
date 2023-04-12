@@ -170,6 +170,8 @@ func newHTTPWAFEventListener(handle *waf.Handle, addresses []string, timeout tim
 			values := make(map[string]interface{}, len(addresses))
 			for _, addr := range addresses {
 				switch addr {
+				case serverRequestMethodAddr:
+					values[serverRequestMethodAddr] = args.Method
 				case serverRequestRawURIAddr:
 					values[serverRequestRawURIAddr] = args.RequestURI
 				case serverRequestHeadersNoCookiesAddr:
@@ -378,6 +380,7 @@ func runWAF(wafCtx *waf.Context, values map[string]interface{}, timeout time.Dur
 
 // HTTP rule addresses currently supported by the WAF
 const (
+	serverRequestMethodAddr           = "server.request.method"
 	serverRequestRawURIAddr           = "server.request.uri.raw"
 	serverRequestHeadersNoCookiesAddr = "server.request.headers.no_cookies"
 	serverRequestCookiesAddr          = "server.request.cookies"
@@ -391,6 +394,7 @@ const (
 
 // List of HTTP rule addresses currently supported by the WAF
 var httpAddresses = []string{
+	serverRequestMethodAddr,
 	serverRequestRawURIAddr,
 	serverRequestHeadersNoCookiesAddr,
 	serverRequestCookiesAddr,
